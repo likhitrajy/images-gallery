@@ -1,11 +1,16 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Container } from 'react-bootstrap';
 
 const Header = (props) =>{
+    const titleStyle = {
+        fontSize: '30px', // Change this value to your desired font size
+    };
     return (
         <Navbar bg="dark" data-bs-theme="dark">
-      <Navbar.Brand href="/">{props.title}</Navbar.Brand>
+        <Container className="justify-content-center">
+        <Navbar.Brand href="/" style={titleStyle}>{props.title}</Navbar.Brand>
+        </Container>
     </Navbar>)
-}
+};
 
 export default Header;
