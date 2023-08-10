@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div>
-      <Header title="IMAGES GALLERY" />
+      <Header />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
       <Container className="mt-4">
         <Row xs={1} md={2} lg={3}>
