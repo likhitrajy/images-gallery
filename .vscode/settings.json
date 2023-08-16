@@ -11,7 +11,7 @@
     "python.linting.pycodestyleEnabled": true,
     "python.linting.pycodestyleArgs":[
         "--max-line-length=100"
-    ]
+    ],
     "python.linting.enabled": true,
     "python.formatting.provider":"black",
     "[python]":{
