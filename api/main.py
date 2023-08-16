@@ -1,4 +1,5 @@
 from flask import Flask, request
+from flask_cors import CORS
 import requests
 from dotenv import load_dotenv
 import os
@@ -11,7 +12,7 @@ if not UNSPLASH_KEY:
     raise EnvironmentError("Please check UNSPLASH_KEY authentication.")
 
 app = Flask(__name__)
-
+CORS(app)
 app.config["DEBUG"] = DEBUG
 
 @app.route("/new-image")
@@ -19,7 +20,8 @@ def new_image():
     word = request.args.get("query")
     headers = {
         "Authorization": "Client-ID "+ UNSPLASH_KEY,
-        "Accept-Version": "v1"
+        "Accept-Version": "v1",
+
     }
     params = {"query": word}
     response = requests.get(url=UNSPLASH_URL, headers=headers, params=params)
