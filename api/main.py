@@ -24,7 +24,7 @@ def new_image():
         "Accept-Version": "v1",
     }
     params = {"query": word}
-    response = requests.get(url=UNSPLASH_URL, headers=headers, params=params)
+    response = requests.get(url=UNSPLASH_URL, headers=headers, params=params, timeout=10)
     data = response.json()
     return data
 
